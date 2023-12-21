@@ -1,0 +1,86 @@
+{
+    "@odata.context": "https://azuregigsearch.search.windows.net/indexes('geo-assets')/$metadata#docs(*)",
+    "@odata.count": 2,
+    "@search.facets": {
+        "Address/StateProvince": [
+            {
+                "count": 2,
+                "value": "London"
+            }
+        ]
+    },
+    "value": [
+        {
+            "@search.score": 1.0,
+            "AssetId": "2",
+            "AssetName": "Paddington Data",
+            "Category": "Boutique",
+            "Address": {
+                "StreetAddress": "2 Kingdom Street",
+                "City": "London",
+                "StateProvince": "London"
+            },
+            "Location": {
+                "Latitude": 51.515972,
+                "Longitude": -0.174943,
+                "GeometryType": "Polygon",
+                "Centroid": {
+                    "type": "Point",
+                    "coordinates": [
+                        -0.174943,
+                        51.515972
+                    ],
+                    "crs": {
+                        "type": "name",
+                        "properties": {
+                            "name": "EPSG:4326"
+                        }
+                    }
+                },
+                "bbox": [
+                    -0.174943,
+                    51.515972,
+                    -0.16227,
+                    51.53749
+                ],
+                "geometryWKT": "POLYGON ((-0.23284 51.54674, -0.19227 51.54674, -0.19227 51.57749, -0.23284 51.57749, -0.23284 51.54674))"
+            }
+        },
+        {
+            "@search.score": 1.0,
+            "AssetId": "1",
+            "AssetName": "Hampstead Data",
+            "Category": "Boutique",
+            "Address": {
+                "StreetAddress": "27 Fordwych Road",
+                "City": "London",
+                "StateProvince": "London"
+            },
+            "Location": {
+                "Latitude": 51.54674,
+                "Longitude": -0.23284,
+                "GeometryType": "Point",
+                "Centroid": {
+                    "type": "Point",
+                    "coordinates": [
+                        -0.23284,
+                        51.54674
+                    ],
+                    "crs": {
+                        "type": "name",
+                        "properties": {
+                            "name": "EPSG:4326"
+                        }
+                    }
+                },
+                "bbox": [
+                    -0.23284,
+                    51.54674,
+                    -0.19227,
+                    51.57749
+                ],
+                "geometryWKT": "POINT (-0.23284 51.54674)"
+            }
+        }
+    ]
+}
