@@ -1,0 +1,31 @@
+{
+    "@search.action": "mergeOrUpload",
+    "AssetId": "3",
+    "AssetName": "US Dataset",
+    "Description": "Description of this very informative dataset that's used in too many demos. Might it be the new york taxis?",
+    "Category": "Transport",
+    "Tags": [ "pool", "air conditioning", "concierge" ],
+    "Public": false,
+    "LastUpdated": "1970-01-18T00:00:00Z",
+    "Rating": 3.60,
+    "Address": 
+        {
+        "StreetAddress": "677 5th Ave",
+        "City": "New York",
+        "StateProvince": "NY",
+        "PostalCode": "10022",
+        "Country": "USA"
+        },
+    "Location": 
+        {
+        "Longitude": -73.98235, 
+        "Latitude": 40.76799,
+        "GeometryType": "Polygon",
+        "Centroid": {
+            "type":"Point",
+            "coordinates": [-73.98235, 40.76799]
+            },    
+        "bbox": [-73.98235, 40.76799, -73.85235, 40.9999],
+        "geometryWKT": "POLYGON ((-73.98235 40.76799, -73.85235 40.76799, -73.85235 40.9999, -73.98235 40.9999, -73.98235 40.76799))"
+        }
+    }
