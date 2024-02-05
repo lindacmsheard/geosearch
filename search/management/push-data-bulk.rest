@@ -15,5 +15,5 @@ Host: azuregigsearch.search.windows.net
 Content-Type: application/json
 api-key: {{env-search-api-key}}
 
-< ../sampledata/pushdocs.json
+< ../../sampledata/pushdocs.json
 

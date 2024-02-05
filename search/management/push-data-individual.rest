@@ -19,11 +19,11 @@ GET http://localhost:5500/sampledata/{{index-name}}-items/item{{item-number}}.js
 # use the Azure Search push api to upload the document metadata to the search index
 # NOTE: fields in the item must match the available index fields
 
-POST https://{{search-name}}.search.windows.net/indexes/{{index-name}}/docs/index
+POST https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs/index
     ?api-version={{search-api-version}} HTTP/1.1
 Host: azuregigsearch.search.windows.net
 Content-Type: application/json
-api-key: {{search-api-key}}
+api-key: {{env-search-api-key}}
 
 {
     "value": [

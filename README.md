@@ -32,7 +32,8 @@ C -->|Render Map Data| D(Azure Maps)
 
 ## BackEnd - Azure Search
 
-- Azure AI Search quickstart adapted from https://learn.microsoft.com/en-us/azure/search/samples-rest 
+- Azure AI Search management and definitions adapted from https://learn.microsoft.com/en-us/azure/search/samples-rest 
+
 
 ## Testing and Search Managememt Plane
 
@@ -40,4 +41,10 @@ The [search/manaagement](./search/management) and [search/test](./search/test) f
 
 > See here for a take on the VSCode Rest Client as an alternative to Postman https://danielabaron.me/blog/postman-alternative-vscode/
 
+
+## Data pipelines and indexer logic
+
+### Opportunities for further scenarios
+- [] pre-process blob metadata https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-properties-metadata-python
+- [] multiple indexers https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/search-blob-metadata  
 
