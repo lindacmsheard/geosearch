@@ -1,0 +1,19 @@
+# Set envrionment variables in .vscode/settings.json
+
+# File level variables 
+@search-api-version = 2023-07-01-Preview
+@index-name = geo-assets
+
+
+
+###
+# Merge or upload documents (items pre-processed into json array)
+
+POST https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs/index
+    ?api-version={{search-api-version}} HTTP/1.1
+Host: azuregigsearch.search.windows.net
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+< ../sampledata/pushdocs.json
+

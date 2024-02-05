@@ -1,0 +1,15 @@
+# Set envrionment variables in .vscode/settings.json
+
+# File level variables 
+@search-api-version = 2023-07-01-Preview
+@index-name = geo-assets
+
+
+###
+# get all
+GET https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs 
+    ?search=*
+    &$count=true 
+    &api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}

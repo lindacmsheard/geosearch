@@ -1,0 +1,97 @@
+{
+    "value": [
+    {
+    "@search.action": "mergeOrUpload",
+    "AssetId": "1",
+    "AssetName": "Hampstead Data",
+    "Description": "The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Time's Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.",
+    "Category": "Boutique",
+    "Tags": [ "pool", "air conditioning", "concierge" ],
+    "Public": false,
+    "LastUpdated": "1970-01-18T00:00:00Z",
+    "Rating": 3.60,
+    "Address": 
+        {
+        "StreetAddress": "27 Fordwych Road",
+        "City": "London",
+        "StateProvince": "London",
+        "PostalCode": "NW2 3TN",
+        "Country": "UK"
+        },
+    "Location": 
+        {
+        "Longitude": -0.23284,
+        "Latitude": 51.54674,
+        "GeometryType":"Point",
+        "Centroid": {
+            "type":"Point",
+            "coordinates": [-0.23284, 51.54674]
+            },    
+        "bbox": [-0.23284, 51.54674, -0.19227, 51.57749],
+        "geometryWKT": "POINT (-0.23284 51.54674)"
+        }
+    },
+    {
+    "@search.action": "mergeOrUpload",
+    "AssetId": "2",
+    "AssetName": "Paddington Data",
+    "Description": "The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Time's Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.",
+    "Category": "Boutique",
+    "Tags": [ "office", "air conditioning", "concierge" ],
+    "Public": false,
+    "LastUpdated": "1970-01-18T00:00:00Z",
+    "Rating": 3.60,
+    "Address": 
+        {
+        "StreetAddress": "2 Kingdom Street",
+        "City": "London",
+        "StateProvince": "London",
+        "PostalCode": "W2 6BD",
+        "Country": "UK"
+        },
+    "Location": 
+        {
+        "Longitude": -0.174943,
+        "Latitude": 51.515972,
+        "GeometryType": "Polygon",
+        "Centroid": {
+            "type":"Point",
+            "coordinates": [-0.174943, 51.515972]
+            },    
+        "bbox": [-0.174943, 51.515972, -0.16227, 51.53749],
+        "geometryWKT": "POLYGON ((-0.23284 51.54674, -0.19227 51.54674, -0.19227 51.57749, -0.23284 51.57749, -0.23284 51.54674))"
+        }
+    },
+        {
+    "@search.action": "mergeOrUpload",
+    "AssetId": "3",
+    "AssetName": "US Dataset",
+    "Description": "Description of this very informative dataset that's used in too many demos. Might it be the new york taxis?",
+    "Category": "Transport",
+    "Tags": [ "pool", "air conditioning", "concierge" ],
+    "Public": false,
+    "LastUpdated": "1970-01-18T00:00:00Z",
+    "Rating": 3.60,
+    "Address": 
+        {
+        "StreetAddress": "677 5th Ave",
+        "City": "New York",
+        "StateProvince": "NY",
+        "PostalCode": "10022",
+        "Country": "USA"
+        },
+    "Location": 
+        {
+        "Longitude": -73.98235, 
+        "Latitude": 40.76799,
+        "GeometryType": "Polygon",
+        "Centroid": {
+            "type":"Point",
+            "coordinates": [-73.98235, 40.76799]
+            },    
+        "bbox": [-73.98235, 40.76799, -73.85235, 40.9999],
+        "geometryWKT": "POLYGON ((-73.98235 40.76799, -73.85235 40.76799, -73.85235 40.9999, -73.98235 40.9999, -73.98235 40.76799))"
+        }
+    }
+    ]
+}

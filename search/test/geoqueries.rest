@@ -1,0 +1,21 @@
+# Set envrionment variables in .vscode/settings.json
+
+# File level Variables 
+@search-api-version = 2023-07-01-Preview
+
+###
+
+POST https://{{env-search-name}}.search.windows.net/indexes/geo-assets/docs/search 
+    ?api-version={{search-api-version}}
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+Content-Length: 311
+
+{
+    "count": true,
+    "search": "*",
+    "filter": "geo.distance(Location/Centroid, geography'POINT(-0.23284 51.54674)') le 10",
+    "facets": [ "Address/StateProvince"],
+    "select": "AssetId, AssetName, Category, Location, Address/StreetAddress, Address/City, Address/StateProvince",
+    "top": 7
+}

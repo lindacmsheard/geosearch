@@ -1,0 +1,100 @@
+{
+    "@odata.context": "https://azuregigsearch.search.windows.net/indexes('geo-assets')/$metadata#docs(*)",
+    "@odata.count": 2,
+    "value": [
+        {
+            "@search.score": 1.0,
+            "AssetId": "2",
+            "AssetName": "Secret Polygon Motel",
+            "Description": "The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Time's Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.",
+            "Category": "Boutique",
+            "Tags": [
+                "pool",
+                "air conditioning",
+                "concierge"
+            ],
+            "Public": false,
+            "LastUpdated": "1970-01-18T00:00:00Z",
+            "Rating": 3.6,
+            "Address": {
+                "StreetAddress": "677 5th Ave",
+                "City": "New York",
+                "StateProvince": "NY",
+                "PostalCode": "10022",
+                "Country": "USA"
+            },
+            "Location": {
+                "Latitude": 51.54674,
+                "Longitude": -0.23284,
+                "GeometryType": "Polygon",
+                "Centroid": {
+                    "type": "Point",
+                    "coordinates": [
+                        -0.23284,
+                        51.54674
+                    ],
+                    "crs": {
+                        "type": "name",
+                        "properties": {
+                            "name": "EPSG:4326"
+                        }
+                    }
+                },
+                "bbox": [
+                    -0.23284,
+                    51.54674,
+                    -0.19227,
+                    51.57749
+                ],
+                "geometryWKT": "POLYGON ((-0.23284 51.54674, -0.19227 51.54674, -0.19227 51.57749, -0.23284 51.57749, -0.23284 51.54674))"
+            }
+        },
+        {
+            "@search.score": 1.0,
+            "AssetId": "1",
+            "AssetName": "Secret Point Motel",
+            "Description": "The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Time's Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.",
+            "Category": "Boutique",
+            "Tags": [
+                "pool",
+                "air conditioning",
+                "concierge"
+            ],
+            "Public": false,
+            "LastUpdated": "1970-01-18T00:00:00Z",
+            "Rating": 3.6,
+            "Address": {
+                "StreetAddress": "677 5th Ave",
+                "City": "New York",
+                "StateProvince": "NY",
+                "PostalCode": "10022",
+                "Country": "USA"
+            },
+            "Location": {
+                "Latitude": 51.54674,
+                "Longitude": -0.23284,
+                "GeometryType": "Point",
+                "Centroid": {
+                    "type": "Point",
+                    "coordinates": [
+                        -0.23284,
+                        51.54674
+                    ],
+                    "crs": {
+                        "type": "name",
+                        "properties": {
+                            "name": "EPSG:4326"
+                        }
+                    }
+                },
+                "bbox": [
+                    -0.13284,
+                    51.44674,
+                    -0.09227,
+                    51.47749
+                ],
+                "geometryWKT": "POINT (-0.23284 51.54674)"
+            }
+        }
+    ]
+}

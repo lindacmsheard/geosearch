@@ -1,0 +1,32 @@
+# Set envrionment variables in .vscode/settings.json
+
+# File level variables 
+@search-api-version = 2023-07-01-Preview
+@index-name = geo-assets
+
+
+###
+# delete an existing index / start fresh
+DELETE  https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+
+###
+# create or update index from definition
+
+PUT https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}
+    ?api-version={{search-api-version}} HTTP/1.1
+Host: azuregigsearch.search.windows.net
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+< ../definitions/indexes/{{index-name}}.json
+
+
+
+# to add data to the index, continue with any of 
+#  - push-data-bulk.rest
+#  - push-data-individual.rest
+#  - manage-indexer.rest

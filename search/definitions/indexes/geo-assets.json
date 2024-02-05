@@ -1,0 +1,31 @@
+{
+    "name": "geo-assets",  
+    "fields": [
+        {"name": "AssetId", "type": "Edm.String", "key": true, "filterable": true},
+        {"name": "AssetName", "type": "Edm.String", "searchable": true, "filterable": false, "sortable": true, "facetable": false},
+        {"name": "Description", "type": "Edm.String", "searchable": true, "filterable": false, "sortable": false, "facetable": false, "analyzer": "en.lucene"},
+        {"name": "Category", "type": "Edm.String", "searchable": true, "filterable": true, "sortable": true, "facetable": true},
+        {"name": "Tags", "type": "Collection(Edm.String)", "searchable": true, "filterable": true, "sortable": false, "facetable": true},
+        {"name": "Public", "type": "Edm.Boolean", "filterable": true, "sortable": true, "facetable": true},
+        {"name": "LastUpdated", "type": "Edm.DateTimeOffset", "filterable": true, "sortable": true, "facetable": true},
+        {"name": "Rating", "type": "Edm.Double", "filterable": true, "sortable": true, "facetable": true},
+        {"name": "Address", "type": "Edm.ComplexType", 
+        "fields": [
+            {"name": "StreetAddress", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "searchable": true},
+            {"name": "City", "type": "Edm.String", "searchable": true, "filterable": true, "sortable": true, "facetable": true},
+            {"name": "StateProvince", "type": "Edm.String", "searchable": true, "filterable": true, "sortable": true, "facetable": true},
+            {"name": "PostalCode", "type": "Edm.String", "searchable": true, "filterable": true, "sortable": true, "facetable": true},
+            {"name": "Country", "type": "Edm.String", "searchable": true, "filterable": true, "sortable": true, "facetable": true}
+        ]},
+        {"name": "Location", "type": "Edm.ComplexType",
+            "fields": [
+                {"name": "Latitude", "type": "Edm.Double", "searchable": false, "filterable": true, "sortable": false, "facetable": false},
+                {"name": "Longitude", "type": "Edm.Double", "searchable": false, "filterable": true, "sortable": false, "facetable": false},
+                {"name": "GeometryType", "type": "Edm.String", "searchable": false, "filterable": false, "sortable": false, "facetable": true},
+                {"name": "Centroid", "type": "Edm.GeographyPoint", "searchable": false, "filterable": true, "sortable": false, "facetable": false },
+                {"name": "bbox", "type": "Collection(Edm.Double)", "filterable": false, "sortable": false, "facetable": false, "searchable": false},
+                {"name": "geometryWKT", "type": "Edm.String", "searchable": false, "filterable": false, "sortable": false, "facetable": false}
+            ]
+        } 
+    ]
+}
