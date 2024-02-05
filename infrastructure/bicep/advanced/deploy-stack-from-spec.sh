@@ -45,9 +45,11 @@ az stack sub create \
     --template-spec $id \
     --parameters project=$RG \
     --tags "managedBy=bicep" \
-    --deny-settings-mode none
+    --deny-settings-mode none 
+
     #--deny-settings-mode denyWriteAndDelete \
-    #--deny-settings-excluded-principals $(az ad signed-in-user show --query id --output tsv)
+    #--deny-settings-excluded-principals "$(az ad signed-in-user show --query id --output tsv)"
     
+
 
 
