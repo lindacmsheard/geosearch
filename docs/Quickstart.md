@@ -1,3 +1,21 @@
+## Pre-requisites
+- Azure Subscription
+- VSCode on a machine that can access Azure ([Install VSCode](https://code.visualstudio.com/download))
+- optional: WSL to work in a Linux dev envrionment ([Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install) and [use with VSCode](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode))
+- Azure CLI installed ([Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli))
+
+Ensure your dev enviroment is connected to the correct Azure subscription:
+```bash
+# login (specfiy tenant if you have access to several)
+az login [--tenant TENANT_ID]
+
+# set subscription
+az account set -s [Subscription Name or ID]
+
+# verify
+az account show
+```
+
 ## Deploy Azure Resources
 
 This demo uses Azure Bicep to deploy the required infrastructure
