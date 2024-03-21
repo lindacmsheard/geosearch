@@ -2,8 +2,7 @@
 
 # File level variables 
 @search-api-version = 2023-07-01-Preview
-@index-name = geo-assets
-@indexer-name = foo
+@indexer-name = rrfi-indexer-v01
 
 
 ###
@@ -23,10 +22,30 @@ api-key: {{env-search-api-key}}
 
 PUT https://{{env-search-name}}.search.windows.net/indexers/{{indexer-name}}
     ?api-version={{search-api-version}} HTTP/1.1
-Host: azuregigsearch.search.windows.net
 Content-Type: application/json
 api-key: {{env-search-api-key}}
 
 < ../definitions/indexers/{{indexer-name}}.json
 
 
+###
+# trigger indexing run
+POST https://{{env-search-name}}.search.windows.net/indexers/{{indexer-name}}/run
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+
+###
+# get status
+GET https://{{env-search-name}}.search.windows.net/indexers/{{indexer-name}}/status
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+###
+# reset
+POST https://{{env-search-name}}.search.windows.net/indexers/{{indexer-name}}/reset
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}

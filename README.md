@@ -8,7 +8,7 @@ A simple geospatial search accelerator
 
 - Azure Maps
 - Azure Search
-- Azure Cognitive Services
+- Azure Cognitive Services (https://aka.ms/csrainotice)
 - Azure Storage
 
 ## Quickstart

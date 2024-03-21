@@ -1,0 +1,162 @@
+#@functionapp-host = http://localhost:7071
+@functionapp-host = https://indexer-functions-py-b1.azurewebsites.net
+# Local function-app
+
+###
+# get all
+GET http://localhost:7071/api/samplefunction
+    ?name=Linda
+#Content-Type: application/json
+
+
+###
+POST http://localhost:7071/api/samplefunction
+Content-Type: application/json
+
+{
+    "name": "Linda",
+    "prompt": "Hello"
+}
+
+
+###
+POST http://localhost:7071/api/aoai_chat
+Content-Type: application/json
+
+{
+    "system_prompt": "Return responses only as valid json objects, do not include other text",
+    "question": "Please return a list of 10 random country dialling codes as a json object.",
+    "context": ""
+}
+
+
+###
+# Sends a skills input on to a custom functon
+# See here for input format that the function must accept, and output format that it needs to return
+# > https://learn.microsoft.com/en-us/azure/search/cognitive-search-custom-skill-web-api
+POST http://localhost:7071/api/path_insights_oai
+Content-Type: application/json
+
+{
+    "values": [
+      {
+        "recordId": "0",
+        "data":
+           {
+             "path": "/HNL G Drive data/Action Plans/May - July 2012  Flooding Feedback.xls",
+            "filename": "May - July 2012  Flooding Feedback.xls",
+            "author": "Janet Smith"
+           }
+      },
+      {
+        "recordId": "1",
+        "data":
+           {
+             "path": "/HNL G Drive data/Duty Officer Logs/2015/Oct 27-28/27 10 2015 AFWDO log.xls",
+            "filename": "27 10 2015 AFWDO log.xls",
+            "author": "Sam Jones"
+           }
+      },
+      {
+        "recordId": "2",
+        "data":
+           {
+            "path": "/HNL G Drive data/Duty Officer Logs/2015/October 5/Herts and North London HRA - Monday 5th October 2015.msg",
+            "filename": "27 10 2015 AFWDO log.xls",
+            "author": "Sam Jones"
+           }
+      },
+      {
+        "recordId": "3",
+        "data":
+           {
+            "path": "/HNL G Drive data/Flood Events/2023/August 2023/Issued/1.IssueAlert_062WAB36TidCrane.docx",
+            "filename": "",
+            "author": "Sam Jones"
+           }
+      }
+    ]
+}
+
+#=================================================================================================================================
+# Deployed Function App
+###
+# get all
+GET {{functionapp-host}}/api/samplefunction
+    ?name=Linda
+#Content-Type: application/json
+
+
+###
+POST https://indexer-functions-py.azurewebsites.net/api/samplefunction
+Content-Type: application/json
+
+{
+    "name": "Linda",
+    "prompt": "Hello"
+}
+
+
+###
+POST {{functionapp-host}}/api/aoai_chat
+Content-Type: application/json
+
+{
+    "system_prompt": "Return responses only as valid json objects, do not include other text",
+    "question": "Please return a list of 10 random country dialling codes as a json object.",
+    "context": ""
+}
+
+###
+
+
+### 
+# Sends a skills input on to a custom functon
+# See here for input format that the function must accept, and output format that it needs to return
+# > https://learn.microsoft.com/en-us/azure/search/cognitive-search-custom-skill-web-api
+POST {{functionapp-host}}/api/path_insights_oai
+Content-Type: application/json
+
+{
+    "values": [
+      {
+        "recordId": "0",
+        "data":
+           {
+             "path": "/HNL G Drive data/Action Plans/May - July 2012  Flooding Feedback.xls",
+            "filename": "May - July 2012  Flooding Feedback.xls",
+            "author": "Janet Smith"
+           }
+      },
+      {
+        "recordId": "1",
+        "data":
+           {
+             "path": "/HNL G Drive data/Duty Officer Logs/2015/Oct 27-28/27 10 2015 AFWDO log.xls",
+            "filename": "27 10 2015 AFWDO log.xls",
+            "author": "Sam Jones"
+           }
+      },
+      {
+        "recordId": "2",
+        "data":
+           {
+            "path": "/HNL G Drive data/Duty Officer Logs/2015/October 5/Herts and North London HRA - Monday 5th October 2015.msg",
+            "filename": "27 10 2015 AFWDO log.xls",
+            "author": "Sam Jones"
+           }
+      },
+      {
+        "recordId": "3",
+        "data":
+           {
+            "path": "/HNL G Drive data/Flood Events/2023/August 2023/Issued/1.IssueAlert_062WAB36TidCrane.docx",
+            "filename": "",
+            "author": "Sam Jones"
+           }
+      }
+    ]
+}
+
+
+###

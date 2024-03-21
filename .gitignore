@@ -1,5 +1,9 @@
 .azure
-.vscode
+
 .env
 .gitmodules
 AzureMapsCodeSamples
+
+rrfi*
+.vscode
+

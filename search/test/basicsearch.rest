@@ -2,7 +2,9 @@
 
 # File level variables 
 @search-api-version = 2023-07-01-Preview
-@index-name = geo-assets
+#@index-name = geo-assets
+@index-name = rrfi-index-v01
+
 
 
 ###

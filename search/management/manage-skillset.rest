@@ -1,0 +1,30 @@
+# Set envrionment variables in .vscode/settings.json
+
+# File level variables 
+@search-api-version = 2023-07-01-Preview
+@skillset-name = rrfi-skillset-v01
+
+
+###
+# delete an existing indexer / start fresh
+DELETE  https://{{env-search-name}}.search.windows.net/skillsets/{{skillset-name}}
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+
+###
+# create or update indexer from definition
+# pre-reqs:
+#  - index must exist
+#  - data source must exist
+#  - skillset must exist
+
+PUT https://{{env-search-name}}.search.windows.net/skillsets/{{skillset-name}}
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+
+< ../definitions/skillsets/{{skillset-name}}.json
+
+

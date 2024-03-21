@@ -11,7 +11,7 @@
 
 POST https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs/index
     ?api-version={{search-api-version}} HTTP/1.1
-Host: azuregigsearch.search.windows.net
+Host: {{env-search-name}}.search.windows.net
 Content-Type: application/json
 api-key: {{env-search-api-key}}
 

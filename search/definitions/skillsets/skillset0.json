@@ -1,0 +1,139 @@
+{
+    "name": "skillset0",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+        "description": "A custom skill that can identify positions of different phrases in the source text",
+        "uri": "https://contoso.count-things.com",
+        "batchSize": 4,
+        "context": "/document/metadata",
+        "inputs": [
+          {
+            "name": "path",
+            "source": "metadata_storage_path"
+          }
+        ],
+        "outputs": [
+          {"name": "year","targetName": "date"},
+            { "name": "from_date", "targetName":"from_date"},
+            { "name": "to_date", "targetName":"to_date"},
+            { "name": "river", "targetName":"river"},
+            { "name": "location", "targetName":"location"}
+        ]
+      },
+      {
+        "description": "Extract text (plain and structured) from image.",
+        "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+        "context": "/document/normalized_images/*",
+        "detectOrientation": true,
+        "inputs": [
+          {
+            "name": "image",
+            "source": "/document/normalized_images/*"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "text",
+            "targetName": "text"
+          },
+          {
+            "name": "layoutText",
+            "targetName": "layoutText"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.MergeSkill",
+        "description": "Create merged_text, which includes all the textual representation of each image inserted at the right location in the content field.",
+        "context": "/document",
+        "insertPreTag": " ",
+        "insertPostTag": " ",
+        "inputs": [
+          {
+            "name":"text",
+            "source": "/document/content"
+          },
+          {
+            "name": "itemsToInsert", 
+            "source": "/document/normalized_images/*/text"
+          },
+          {
+            "name":"offsets", 
+            "source": "/document/normalized_images/*/contentOffset"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "mergedText", 
+            "targetName" : "merged_text"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.EntityRecognitionSkill",
+        "name": "#4",
+        "description": null,
+        "context": "/document/content",
+        "categories": [
+          "Person",
+          "Quantity",
+          "Organization",
+          "URL",
+          "Email",
+          "Location",
+          "DateTime"
+        ],
+        "defaultLanguageCode": "en",
+        "minimumPrecision": null,
+        "includeTypelessEntities": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "organizations",
+            "targetName": "organizations"
+          },
+          {
+            "name": "persons",
+            "targetName": "people"
+          },
+          {
+            "name": "locations",
+            "targetName": "locations"
+          },
+          {
+            "name": "urls",
+            "targetName": "urls"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name":"#5",
+        "maxKeyPhraseCount": null,
+        "context": "/document/content",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "keyPhrases",
+            "targetName": "keyPhrases"
+          }
+        ]
+      }
+    ],
+    "cognitiveServices": {
+    	"@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+    	"description": "cog-services account",
+    	"key": "{{cogApiKey}}"
+    }
+}

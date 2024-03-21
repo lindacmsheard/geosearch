@@ -2,11 +2,13 @@
 
 # File level variables 
 @search-api-version = 2023-07-01-Preview
-@index-name = geo-assets
+#@index-name = geo-assets
+@index-name = rrfi-index-v01
 
 
 ###
 # delete an existing index / start fresh
+# Step 0: Optional, clear up before redo
 DELETE  https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}
     ?api-version={{search-api-version}} HTTP/1.1
 Content-Type: application/json
@@ -18,12 +20,18 @@ api-key: {{env-search-api-key}}
 
 PUT https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}
     ?api-version={{search-api-version}} HTTP/1.1
-Host: azuregigsearch.search.windows.net
+#Host: {{env-search-name}}.search.windows.net
 Content-Type: application/json
 api-key: {{env-search-api-key}}
 
 < ../definitions/indexes/{{index-name}}.json
 
+###
+
+GET https://{{env-search-name}}.search.windows.net/indexes/
+    ?api-version={{search-api-version}} HTTP/1.1
+Content-Type: application/json
+api-key: {{env-search-api-key}}
 
 
 # to add data to the index, continue with any of 

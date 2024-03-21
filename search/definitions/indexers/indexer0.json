@@ -1,0 +1,62 @@
+{   
+    "name": "{{indexerName}}",
+    "description" : "indexer", 
+    "dataSourceName" : "blob",  
+    "targetIndexName" : "{{indexName}}",  
+    "skillsetName" : "{{skillsetName}}",
+    "schedule" : null,  
+    "parameters" : { 
+        "maxFailedItems" : "15", 
+        "maxFailedItemsPerBatch": "1",
+        "batchSize" : "100", 
+        "configuration" : 
+            { 
+            "parsingMode" : "default", 
+            "indexedFileNameExtensions" : ".pdf, .docx",
+            "imageAction" : "none",
+            "dataToExtract" : "contentAndMetadata" ,
+            "executionEnvironment": "Standard"
+            } 
+        },  
+    "fieldMappings" : [
+        { "sourceFieldName" : "documentVersion", "targetFieldName" : "documentVersion" },
+        { "sourceFieldName" : "source", "targetFieldName" : "broker" },
+        {
+            "sourceFieldName" : "metadata_storage_path",
+            "targetFieldName" : "id",
+            "mappingFunction" : {
+              "name" : "base64Encode"
+            }
+          },
+        { "sourceFieldName" : "content", "targetFieldName" : "content" },
+        { "sourceFieldName" : "metadata_storage_name", "targetFieldName" : "file_name" },
+        { "sourceFieldName" : "metadata_storage_path", "targetFieldName" : "url" },
+        { "sourceFieldName" : "metadata_storage_last_modified", "targetFieldName" : "last_modified" },
+        { "sourceFieldName" : "metadata_storage_size", "targetFieldName" : "size" },
+        { "sourceFieldName" : "metadata_author", "targetFieldName" : "author" }
+
+    ],
+    "outputFieldMappings" : [
+        {
+            "sourceFieldName": "/document/content/organizations",
+            "targetFieldName": "organisations"
+        },
+        {
+            "sourceFieldName": "/document/content/people",
+            "targetFieldName": "people"
+        },
+        {
+            "sourceFieldName": "/document/content/locations",
+            "targetFieldName": "locations"
+        },
+        {
+            "sourceFieldName": "/document/content/keyPhrases",
+            "targetFieldName": "keyphrases"
+        },
+        {
+            "sourceFieldName": "/document/content/urls",
+            "targetFieldName": "urls"
+        }
+    ],
+    "disabled" : false
+}  

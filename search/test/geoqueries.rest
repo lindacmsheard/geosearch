@@ -19,3 +19,10 @@ Content-Length: 311
     "select": "AssetId, AssetName, Category, Location, Address/StreetAddress, Address/City, Address/StateProvince",
     "top": 7
 }
+
+###
+
+
+GET https://gtr.ukri.org/gtr/api/funds
+Content-Type: application/json
+Accept: application/json
