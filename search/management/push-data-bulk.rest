@@ -1,8 +1,8 @@
 # Set envrionment variables in .vscode/settings.json
 
 # File level variables 
-@search-api-version = 2023-07-01-Preview
-@index-name = geo-assets
+@search-api-version = 2024-07-01
+@index-name = rrfi-index-v01
 
 
 

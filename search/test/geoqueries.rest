@@ -1,7 +1,24 @@
 # Set envrionment variables in .vscode/settings.json
 
 # File level Variables 
-@search-api-version = 2023-07-01-Preview
+@search-api-version = 2024-07-01
+@index-name = nws-index-v01
+###
+
+POST https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs/search 
+    ?api-version={{search-api-version}}
+Content-Type: application/json
+api-key: {{env-search-api-key}}
+Content-Length: 311
+
+{
+    "count": true,
+    "search": "*",
+    "filter": "geo.distance(location, geography'POINT(-0.23284 51.54674)') le 10",
+    "top": 7
+}
+
+###
 
 ###
 
