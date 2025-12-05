@@ -14,7 +14,7 @@ def get_aoai_response(system_prompt: str, prompt: str):
     message_text = [{"role":"system","content":system_prompt},{"role":"user","content":prompt}]
 
     completion = client.chat.completions.create(
-        model="gpt-4-32k", # model = "deployment_name"
+        model="gpt-4.1-mini", # model = "deployment_name"
         messages = message_text,
         temperature=0.7,
         max_tokens=800,

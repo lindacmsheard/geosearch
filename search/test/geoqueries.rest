@@ -2,7 +2,7 @@
 
 # File level Variables 
 @search-api-version = 2024-07-01
-@index-name = nws-index-v01
+@index-name = geo-assets
 ###
 
 POST https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs/search 

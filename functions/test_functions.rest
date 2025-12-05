@@ -1,7 +1,7 @@
 #@functionapp-host = http://localhost:7071
 @functionapp-host = https://indexer-functions-py-b1.azurewebsites.net
 # Local function-app
-
+git
 ###
 # get all
 GET http://localhost:7071/api/samplefunction

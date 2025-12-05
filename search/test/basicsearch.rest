@@ -15,3 +15,14 @@ GET https://{{env-search-name}}.search.windows.net/indexes/{{index-name}}/docs
     &api-version={{search-api-version}} HTTP/1.1
 Content-Type: application/json
 api-key: {{env-search-api-key}}
+
+
+###
+POST https://agent2copilot.azurewebsites.net/api/agent_httptrigger
+Content-Type: application/json
+x-functions-key: {{key}}
+
+{
+  "message":"Hi",
+  "agentid":"asst_dXBFbTrDWYbp0D4EJAatv9o3"
+}

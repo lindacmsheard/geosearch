@@ -1,0 +1,15 @@
+GET https://www.google.com 
+
+###
+
+GET https://www.bing.com?message=hello&name=world
+
+
+###
+
+POST https://www.bing.com
+Content-Type: application/json
+{
+    "message": "hello",
+    "name": "world"
+}
